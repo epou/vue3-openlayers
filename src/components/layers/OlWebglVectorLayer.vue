@@ -5,18 +5,17 @@
 </template>
 
 <script setup lang="ts">
-import { provide } from "vue";
+import { provide, watch } from "vue";
 import useLayer from "@/composables/useLayer";
 import { type LayersCommonProps } from "@/components/layers/LayersCommonProps";
-import { WebGLVectorLayer } from "./WebGLVectorLayerClass";
-import type { WebGLStyle } from "ol/style/webgl";
+import WebGLVectorLayer, { type Options } from "ol/layer/WebGLVector";
 import type { LayerEvents } from "@/composables";
 import type { LayerSwitcherOptions } from "@/types";
 
-type Props = LayersCommonProps & {
-  disableHitDetection?: boolean;
-  styles: WebGLStyle;
-} & LayerSwitcherOptions;
+
+type Props = Omit<Options, "style"> & LayersCommonProps & LayerSwitcherOptions & {
+  styles?: Options["style"];
+};
 const props = withDefaults(defineProps<Props>(), {
   disableHitDetection: false,
   styles: () => ({
@@ -26,11 +25,21 @@ const props = withDefaults(defineProps<Props>(), {
     "shape-fill-color": "blue",
   }),
 });
+
 defineEmits<LayerEvents>();
 
 const { layer } = useLayer(WebGLVectorLayer, props);
 
 provide("webglVectorLayer", layer);
+
+watch(
+  () => props.variables,
+  (newVariables) => {
+    if (newVariables) {
+      layer.value.updateStyleVariables(newVariables);
+    }
+  },
+);
 
 defineExpose({
   webglVectorLayer: layer,
