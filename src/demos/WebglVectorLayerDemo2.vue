@@ -15,7 +15,7 @@
     </ol-tile-layer>
 
     <!-- webgl lines layer -->
-    <ol-webgl-vector-layer :styles="webglLineStyle" :variables="webglVariables" :visible="true">
+    <ol-webgl-vector-layer :styles="webglLineStyle" :variables="webglVariables">
       <ol-source-vector ref="sourceRef" />
     </ol-webgl-vector-layer>
 
