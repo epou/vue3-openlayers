@@ -1,5 +1,12 @@
 # Changelog
 
+## [12.2.1](https://github.com/MelihAltintas/vue3-openlayers/compare/v12.2.0...v12.2.1) (2026-02-24)
+
+
+### Bug Fixes
+
+* **ol-map:** detach map target before child unmount to prevent tile source race ([#450](https://github.com/MelihAltintas/vue3-openlayers/issues/450)) ([10f0a55](https://github.com/MelihAltintas/vue3-openlayers/commit/10f0a555b594e280821a837f705215fa7b34a789))
+
 # [12.2.0](https://github.com/MelihAltintas/vue3-openlayers/compare/v12.1.1...v12.2.0) (2025-11-12)
 
 
