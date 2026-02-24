@@ -1,5 +1,13 @@
 # Changelog
 
+## [12.2.2](https://github.com/MelihAltintas/vue3-openlayers/compare/v12.2.1...v12.2.2) (2026-02-24)
+
+
+### Bug Fixes
+
+* **deps:** downgrade @types/ol-ext to resolve type compatibility issues ([b5cb03d](https://github.com/MelihAltintas/vue3-openlayers/commit/b5cb03db38bc49068f68eb6a69546303822e6c5d))
+* **deps:** upgrade dependencies to fix critical security vulnerability with jspdf dependency ([312d4a7](https://github.com/MelihAltintas/vue3-openlayers/commit/312d4a776836c7884c43dfe89496ec24c39cffd4)), closes [#449](https://github.com/MelihAltintas/vue3-openlayers/issues/449)
+
 ## [12.2.1](https://github.com/MelihAltintas/vue3-openlayers/compare/v12.2.0...v12.2.1) (2026-02-24)
 
 
